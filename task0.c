@@ -82,15 +82,26 @@ int _printf(const char *format, ...)
 				buf[i] = '%';
 				len = 1;
 			}
-
-			i += 2;
+			if (i == BUF_SIZE)
+			{
+				write(1, buf, mv - buf);
+				mv = buf;
+			}
+			else
+				i += 2;
 			mv += len;
 			continue;
 		}
 
 		*mv = format[i];
 		mv++;
-		i++;
+		if (i == BUF_SIZE)
+		{
+			write(1, buf, mv - buf);
+			mv = buf;
+		}
+		else
+			i++;
 	}
 
 	*mv = '\0';
