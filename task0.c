@@ -77,31 +77,24 @@ int _printf(const char *format, ...)
 				len = printchar(string, mv);
 			else if (format[i + 1] == 's')
 				len = printstring(string, mv);
-			else
+			else if (format[i + 1] == '%')
 			{
 				buf[i] = '%';
 				len = 1;
 			}
-			if (i == BUF_SIZE)
-			{
-				write(1, buf, mv - buf);
-				mv = buf;
-			}
 			else
-				i += 2;
+			{
+				write(2, "Invalid Conversion Specifier\n", 29);
+				return (1);
+			}
+			i += 2;
 			mv += len;
 			continue;
 		}
 
 		*mv = format[i];
 		mv++;
-		if (i == BUF_SIZE)
-		{
-			write(1, buf, mv - buf);
-			mv = buf;
-		}
-		else
-			i++;
+		i++;
 	}
 
 	*mv = '\0';
@@ -109,4 +102,9 @@ int _printf(const char *format, ...)
 	va_end(string);
 	write(1, buf, mv - buf);
 	return (mv - buf);
+}
+int main(void)
+{
+	_printf("%K\n");
+	return (0);
 }
