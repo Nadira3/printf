@@ -103,8 +103,3 @@ int _printf(const char *format, ...)
 	write(1, buf, mv - buf);
 	return (mv - buf);
 }
-int main(void)
-{
-	_printf("%K\n");
-	return (0);
-}
