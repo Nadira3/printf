@@ -72,7 +72,6 @@ int _printf(const char *format, ...)
 		i++;
 	}
 	len += _putchar(format[i]);
-	printf("%d\n", len);
 	va_end(list);
 	return (i + len);
 }
