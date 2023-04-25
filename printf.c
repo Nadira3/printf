@@ -59,7 +59,7 @@ void (*get_format(char ch))(va_list)
 int _printf(const char *format, ...)
 {
 	va_list list;
-	int i = 0, len = 0, check;
+	int i = 0, len = 0;
 	void (*func_ptr)(va_list);
 
 	if (!*format)
