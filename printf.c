@@ -18,10 +18,13 @@ void print_string(va_list list)
 {
 	char *ch = va_arg(list, char *);
 
-	while (*ch)
+	if (ch)
 	{
-		_putchar(*ch);
-		ch++;
+		while (*ch)
+		{
+			_putchar(*ch);
+			ch++;
+		}
 	}
 }
 /**
