@@ -5,7 +5,7 @@
  */
 void print_char(va_list list)
 {
-	int ch = va_arg(list, int);
+	unsigned char ch = va_arg(list, int);
 
 	_putchar(ch);
 }
