@@ -29,20 +29,11 @@ int buf_count(int len)
 {
 	static int total_len;
 
-	total_len += len;
 	if (len == -1)
-		total_len = 0;
-	return (total_len);
-}
-/**
- * buf_flush - flushes a buffer
- * @buf: buffer
- */
-void buf_flush(char *buf)
-{
-	while (*buf)
 	{
-		*buf = '\0';
-		buf++;
+		total_len = 0;
+		return (total_len);
 	}
+	total_len += len;
+	return (total_len);
 }
