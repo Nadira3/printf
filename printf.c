@@ -74,13 +74,13 @@ int _printf(const char *format, ...)
 				else
 				{
 					buf_count(-1);
-					return (0);
+					return (-1);
 				}
 				i++;
 			}
 			else
 			{
-				return (0);
+				return (-1);
 			}
 			continue;
 		}
