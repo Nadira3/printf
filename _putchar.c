@@ -6,7 +6,7 @@
  */
 int _putchar(char str)
 {
-	static int len;
+	static int len = 0;
 	static char buf[BUFSIZE];
 
 	if (len >= BUFSIZE || !str)
@@ -29,7 +29,7 @@ int _putchar(char str)
  */
 int buf_count(int len)
 {
-	static int total_len;
+	static int total_len = 0;
 
 	total_len += len;
 	if (len == -1)
