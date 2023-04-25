@@ -1,9 +1,14 @@
 #include "main.h"
+/**
+ * _putchar - puts a character to output buffer
+ * @str: character
+ * Return: 0
+ */
 int _putchar(char str)
 {
-	static int len = 0;
+	static int len;
 	static char buf[BUFSIZE];
-	
+
 	if (len >= BUFSIZE || !str)
 	{
 		write(1, buf, len);
@@ -17,20 +22,29 @@ int _putchar(char str)
 	buf_count(1);
 	return (0);
 }
+/**
+ * buf_count - saves the lenght of the buffer
+ * @len: initial lenght
+ * Return: lenght of buffer
+ */
 int buf_count(int len)
 {
-	static int total_len = 0;
+	static int total_len;
 
 	total_len += len;
 	if (len == -1)
 		total_len = 0;
 	return (total_len);
 }
+/**
+ * buf_flush - flushes a buffer
+ * @buf: buffer
+ */
 void buf_flush(char *buf)
 {
-        while (*buf)
-        {
-                *buf = '\0';
-                buf++;
-        }
+	while (*buf)
+	{
+		*buf = '\0';
+		buf++;
+	}
 }

@@ -3,7 +3,6 @@
  * print_char - prints a character
  * @list: va_list containing the character to print
  */
-
 void print_char(va_list list)
 {
 	int ch = va_arg(list, int);
@@ -25,7 +24,11 @@ void print_string(va_list list)
 		ch++;
 	}
 }
-
+/**
+ * get_format - gets the format specificier of the variable argument
+ * @ch: character to match with
+ * Return: function pointer
+ */
 void (*get_format(char ch))(va_list)
 {
 	int j = 0;
@@ -39,14 +42,16 @@ void (*get_format(char ch))(va_list)
 	while (csp[j].f)
 	{
 		if (*(csp[j].f) == ch)
-		{
 			return (csp[j].func);
-			break;
-		}
 		j++;
 	}
 	return (csp[j].func);
 }
+/**
+ * _printf - prints strings and characters
+ * @format: format string
+ * Return: lenght of the string
+ */
 int _printf(const char *format, ...)
 {
 	va_list list;
