@@ -27,7 +27,7 @@ void printstring(va_list);
 int _printf(const char *, ...);
 void buf_flush(char *buf);
 void print_binary(va_list list);
-void negative_binary_div(int n);
-void binary_div(int n);
+void negative_binary_div(unsigned int n);
+void binary_div(unsigned int n);
 
 #endif
