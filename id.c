@@ -6,7 +6,8 @@
  */
 int _puti(int n)
 {
-	static char buf[BUFSIZE], i;
+	static char buf[BUFSIZE];
+	static int i;
 
 	if (i >= BUFSIZE || n == -1)
 	{
@@ -16,8 +17,9 @@ int _puti(int n)
 	buf[i] = n + '0';
 	buf_count(1);
 	i++;
+	return (0);
 }
-int split_num(int n)
+void split_num(int n)
 {
 	if (n / 10)
 		split_num(n / 10);
@@ -25,13 +27,14 @@ int split_num(int n)
 }
 void print_int(va_list list)
 {
-	int len = 0;
 	int n = va_arg(list, int);
 	
-	split_num(n);
 	if (n < 0)
+	{
 		write(1, "-", 1);
+		n = -n;
+	}
+	split_num(n);
 	_puti(-1);
-	len = buf_count(0);
 	buf_count(-1);
 }
