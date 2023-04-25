@@ -20,6 +20,8 @@ typedef struct format
 int _putchar(char str);
 void (*get_format(char ch))(va_list);
 int buf_count(int len);
+void print_int(va_list);
+int split_num(int n);
 void printchar(va_list);
 void printstring(va_list);
 int _printf(const char *, ...);
