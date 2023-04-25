@@ -25,7 +25,6 @@ void print_string(va_list list)
 			_putchar(*ch);
 			ch++;
 		}
-		buf_count(1);
 	}
 }
 /**
