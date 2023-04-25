@@ -37,3 +37,15 @@ int buf_count(int len)
 	total_len += len;
 	return (total_len);
 }
+/**
+ * buf_flush - flushes the buffer
+ * @buf: buffer
+ */
+void buf_flush(char *b)
+{
+	while (*b)
+	{
+		*b = '\0';
+		b++;
+	}
+}
