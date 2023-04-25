@@ -13,14 +13,12 @@ int _putchar(char str)
 	{
 		write(1, buf, len);
 		len = 0;
-		if (!str)
-			buf_flush(buf);
 		return (0);
 	}
 	buf[len] = str;
 	len++;
 	buf_count(1);
-	return (0);
+	return (1);
 }
 /**
  * buf_count - saves the lenght of the buffer
