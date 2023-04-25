@@ -14,13 +14,15 @@
 typedef struct format
 {
 	char *f;
-	size_t (*func)(va_list);
+	void (*func)(va_list);
 } specifier;
 
-size_t printchar(va_list list);
-size_t printstring(va_list list);
-char *buf_init(char *);
+int _putchar(char str);
+void (*get_format(char ch))(va_list);
+int buf_count(int len);
+void printchar(va_list);
+void printstring(va_list);
 int _printf(const char *, ...);
-int _putchar(char);
+void buf_flush(char *buf);
 
 #endif

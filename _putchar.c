@@ -1,23 +1,36 @@
-#include <unistd.h>
 #include "main.h"
-/**
- * _putchar - writes to a buffer/stdout
- * @str: character
- * Return: number of characters written
- */
 int _putchar(char str)
 {
-	static int i = 0, len = 0;
+	static int len = 0;
 	static char buf[BUFSIZE];
 	
-	if (i >= BUFSIZE || !str)
+	if (len >= BUFSIZE || !str)
 	{
-		write(1, buf, i);
-		len = i;
-		i = 0;
-		return (len);
+		write(1, buf, len);
+		len = 0;
+		if (!str)
+			buf_flush(buf);
+		return (0);
 	}
-	buf[i] = str;
-	i++;
-	return (i);
+	buf[len] = str;
+	len++;
+	buf_count(1);
+	return (0);
+}
+int buf_count(int len)
+{
+	static int total_len = 0;
+
+	total_len += len;
+	if (len == -1)
+		total_len = 0;
+	return (total_len);
+}
+void buf_flush(char *buf)
+{
+        while (*buf)
+        {
+                *buf = '\0';
+                buf++;
+        }
 }
