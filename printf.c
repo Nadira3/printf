@@ -25,6 +25,7 @@ void print_string(va_list list)
 			_putchar(*ch);
 			ch++;
 		}
+		buf_count(1);
 	}
 }
 /**
@@ -91,7 +92,7 @@ int _printf(const char *format, ...)
 		i++;
 	}
 	_putchar(format[i]);
-	len = buf_count(0);
+	len += buf_count(0);
 	buf_count(-1);
 	return (len);
 }
