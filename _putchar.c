@@ -9,7 +9,7 @@ int _putchar(char str)
 	static int len;
 	static char buf[BUFSIZE];
 
-	if (len >= BUFSIZE - 1|| !str)
+	if (len >= BUFSIZE - 1 || !str)
 	{
 		write(1, buf, len);
 		len = 0;
@@ -39,7 +39,7 @@ int buf_count(int len)
 }
 /**
  * buf_flush - flushes the buffer
- * @buf: buffer
+ * @b: buffer
  */
 void buf_flush(char *b)
 {
