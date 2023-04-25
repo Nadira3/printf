@@ -74,14 +74,12 @@ int _printf(const char *format, ...)
 				else
 				{
 					buf_count(-1);
-					write(2, "Error\n", 6);
 					return (-1);
 				}
 				i++;
 			}
 			else
 			{
-				write(2, "Error\n", 6);
 				return (-1);
 			}
 			continue;
