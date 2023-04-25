@@ -9,7 +9,7 @@ int _putchar(char str)
 	static int len;
 	static char buf[BUFSIZE];
 
-	if (len >= BUFSIZE || !str)
+	if (len >= BUFSIZE - 1|| !str)
 	{
 		write(1, buf, len);
 		len = 0;
