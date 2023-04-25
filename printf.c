@@ -42,6 +42,7 @@ void (*get_format(char ch))(va_list)
 		{"s", print_string},
 		{"d", print_int},
 		{"i", print_int},
+		{"b", print_binary},
 		{NULL, NULL}
 	};
 
