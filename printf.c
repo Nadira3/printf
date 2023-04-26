@@ -50,8 +50,8 @@ int (*get_format(char ch))(va_list)
 		{"u", u_print_int},
 		{"b", print_binary},
 		{"o", print_octal},
-		{"x", print_hex},
-		{"X", print_hex},
+		{"x", print_hex_lower},
+		{"X", print_hex_upper},
 		{NULL, NULL}
 	};
 

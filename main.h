@@ -33,11 +33,12 @@ int print_binary(va_list list);
 int print_octal(va_list list);
 void negative_binary_div(unsigned n);
 void negative_octal_div(unsigned n);
-void negative_hex_div(unsigned n);
+void negative_hex_div(unsigned n, int flag);
 void binary_div(unsigned n);
 void octal_div(unsigned n);
-void hex_div(unsigned n);
-int print_hex(va_list list);
-char letter(unsigned n);
+void hex_div(unsigned n, int flag);
+int print_hex_upper(va_list list);
+int print_hex_lower(va_list list);
+char letter(unsigned n, int flag);
 
 #endif

@@ -10,10 +10,10 @@
  */
 int main(void)
 {
-	int len, len2;
+	int len = 0, len2 = 0;
 
 	len = _printf("%!\n");
-	printf("%x\n", -1024);
+	_printf("%X\n", -1024);
 	_printf("%x\n", -1024);
 	printf("%x\n", 1024);
 	_printf("%x\n", 1024);
