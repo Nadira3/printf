@@ -15,10 +15,11 @@ int main(void)
 	len = _printf("%b\n", -429496);
 	/*len = _printf("%K\n");
 	len2 = _printf("%!\n");
-	printf("%d, %d", len, len2);
-	_printf("%c", '\0');
 	_printf(NULL);*/
-	_printf("%c", '\0');
+	len = printf("%c", '\0');
+	len2 = _printf("%c", '\0');
+	printf("%d, %d", len, len2);
+	_printf("%d", INT_MAX);
 	fflush(stdout);
 	if (len != len2)
 	{

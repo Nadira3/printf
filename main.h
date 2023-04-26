@@ -23,7 +23,7 @@ int (*get_format(char ch))(va_list);
 int buf_count(int len);
 void _puts(char *s);
 int print_int(va_list);
-void split_num(int n);
+void split_num(long int n);
 int printchar(va_list);
 int printstring(va_list);
 int _printf(const char *, ...);
