@@ -84,7 +84,7 @@ int _printf(const char *format, ...)
 				else
 				{
 					buf_count(-1);
-					return (-1);
+					return (0);
 				}
 				i++;
 			}
