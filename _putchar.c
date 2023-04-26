@@ -49,3 +49,16 @@ void buf_flush(char *b)
 		b++;
 	}
 }
+
+/**
+ * _puts - prints a string
+ * @s: string
+ */
+void _puts(char *s)
+{
+	while (*s)
+	{
+		_putchar(*s);
+		s++;
+	}
+}
