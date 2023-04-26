@@ -65,8 +65,7 @@ int (*get_format(char ch))(va_list)
 int _printf(const char *format, ...)
 {
 	va_list list;
-	int i = 0, len = 0, check;
-	int (*func_ptr)(va_list);
+	int i = 0, len = 0, (*func_ptr)(va_list);
 
 	if (!format)
 		return (-1);
@@ -80,7 +79,7 @@ int _printf(const char *format, ...)
 			{
 				func_ptr = get_format(format[i]);
 				if (func_ptr)
-					check = func_ptr(list);
+					func_ptr(list);
 				else if (format[i] == '%')
 					_putchar('%');
 				else
@@ -88,8 +87,6 @@ int _printf(const char *format, ...)
 					buf_count(-1);
 					return (-1);
 				}
-				if (!check)
-					return (-1);
 				i++;
 			}
 			else
