@@ -24,5 +24,5 @@ int print_int(va_list list)
 		n = -n;
 	}
 	split_num(n);
-	return (0);
+	return (1);
 }

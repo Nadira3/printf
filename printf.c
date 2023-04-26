@@ -22,15 +22,14 @@ int print_string(va_list list)
 {
 	char *ch = va_arg(list, char *);
 
-	if (ch)
+	if (!ch)
+		return (0);
+	while (*ch)
 	{
-		while (*ch)
-		{
-			_putchar(*ch);
-			ch++;
-		}
+		_putchar(*ch);
+		ch++;
 	}
-	return (ch ? 1 : 0);
+	return (1);
 }
 /**
  * get_format - gets the format specificier of the variable argument
@@ -81,7 +80,10 @@ int _printf(const char *format, ...)
 			{
 				func_ptr = get_format(format[i]);
 				if (func_ptr)
-					func_ptr(list);
+				{
+					if (!(func_ptr(list)))
+						return (-1);
+				}
 				else if (format[i] == '%')
 					_putchar('%');
 				else

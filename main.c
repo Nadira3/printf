@@ -19,7 +19,6 @@ int main(void)
 	_printf("%c", '\0');
 	_printf(NULL);*/
 	_printf("%c", '\0');
-	_printf("Complete the sentence: You %s nothing, Jon Snow.\n", NULL);
 	fflush(stdout);
 	if (len != len2)
 	{

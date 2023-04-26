@@ -34,5 +34,5 @@ int print_binary(va_list list)
 		binary_div(n);
 	else
 		negative_binary_div(n);
-	return (0);
+	return (1);
 }
