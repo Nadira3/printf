@@ -11,6 +11,7 @@
 int main(void)
 {
 	int len, len2;
+	double res = INT_MAX  + INT_MAX;
 
 	len = _printf("%b\n", -429496);
 	/*len = _printf("%K\n");
@@ -19,7 +20,9 @@ int main(void)
 	len = printf("%c", '\0');
 	len2 = _printf("%c", '\0');
 	printf("%d, %d", len, len2);
+	_printf("%b\n", -1024);
 	_printf("%d", INT_MAX);
+	_printf("%b + %b = %b\n", INT_MAX, INT_MAX, res);
 	fflush(stdout);
 	if (len != len2)
 	{
