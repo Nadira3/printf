@@ -66,8 +66,8 @@ int _printf(const char *format, ...)
 	int i = 0, len = 0;
 	void (*func_ptr)(va_list);
 
-	if (!*format)
-		return (-1);
+	if (!format)
+		EXIT_FAILURE;
 	va_start(list, format);
 	while (format && format[i])
 	{
@@ -84,12 +84,12 @@ int _printf(const char *format, ...)
 				else
 				{
 					buf_count(-1);
-					return (-1);
+					EXIT_FAILURE;
 				}
 				i++;
 			}
 			else
-				return (-1);
+				EXIT_FAILURE;
 			continue;
 		}
 		_putchar(format[i]);
