@@ -30,9 +30,9 @@ int _printf(const char *, ...);
 void buf_flush(char *buf);
 int print_binary(va_list list);
 int print_octal(va_list list);
-void negative_binary_div(int n);
+void negative_binary_div(long int n);
 void negative_octal_div(int n);
-void binary_div(int n);
+void binary_div(long int n);
 void octal_div(int n);
 
 #endif
