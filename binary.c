@@ -22,6 +22,7 @@ void negative_binary_div(int n)
 /**
  * print_binary - prints integer
  * @list: variable list
+ * Return: Always 0 || 1
  */
 int print_binary(va_list list)
 {

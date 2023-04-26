@@ -12,6 +12,7 @@ void split_num(int n)
 /**
  * print_int - prints integer
  * @list: integer
+ * Return: 0
  */
 int print_int(va_list list)
 {

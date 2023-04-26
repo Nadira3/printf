@@ -2,6 +2,7 @@
 /**
  * print_char - prints a character
  * @list: va_list containing the character to print
+ * Return: Always 0 || 1
  */
 int print_char(va_list list)
 {
@@ -15,6 +16,7 @@ int print_char(va_list list)
 /**
  * print_string - prints a string
  * @list: va_list containing the string to print
+ * Return: Always 0 || 1
  */
 int print_string(va_list list)
 {
