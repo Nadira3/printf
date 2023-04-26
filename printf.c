@@ -8,9 +8,10 @@ int print_char(va_list list)
 {
 	unsigned int ch = va_arg(list, int);
 
-	if (ch)
-		_putchar(ch);
-	return (ch ? 1 : 0);
+	if (ch == 0)
+		return (0);
+	_putchar(ch);
+	return (1);
 }
 
 /**
@@ -22,7 +23,7 @@ int print_string(va_list list)
 {
 	char *ch = va_arg(list, char *);
 
-	if (!ch)
+	if (ch == NULL)
 		return (0);
 	while (*ch)
 	{
