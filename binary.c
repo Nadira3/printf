@@ -9,6 +9,10 @@ void binary_div(int n)
 		binary_div(n / 2);
 	_putchar((n % 2) + '0');
 }
+/**
+ * negative_binary_div - comverts negative decimal to binary
+ * @n: number
+ */
 void negative_binary_div(int n)
 {
 	if (n / 2)
