@@ -47,7 +47,11 @@ int (*get_format(char ch))(va_list)
 		{"S", print_string},
 		{"d", print_int},
 		{"i", print_int},
+		{"u", u_print_int},
 		{"b", print_binary},
+		{"o", print_octal},
+		{"x", print_hex},
+		{"X", print_hex},
 		{NULL, NULL}
 	};
 
