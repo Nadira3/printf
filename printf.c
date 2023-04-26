@@ -40,6 +40,7 @@ void (*get_format(char ch))(va_list)
 	specifier csp[] = {
 		{"c", print_char},
 		{"s", print_string},
+		{"S", print_string},
 		{"d", print_int},
 		{"i", print_int},
 		{"u", u_print_int},
