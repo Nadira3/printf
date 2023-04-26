@@ -3,7 +3,7 @@
  * split_num - splits a number
  * @n: number
  */
-void split_num(int n)
+void split_num(long int n)
 {
 	if (n / 10)
 		split_num(n / 10);
@@ -16,7 +16,7 @@ void split_num(int n)
  */
 int print_int(va_list list)
 {
-	int n = va_arg(list, int);
+	long int n = va_arg(list, int);
 
 	if (n < 0)
 	{

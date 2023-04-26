@@ -8,8 +8,8 @@ int print_char(va_list list)
 {
 	unsigned int ch = va_arg(list, int);
 
-	if (ch == 0)
-		return (0);
+	if (!ch)
+		buf_count(-1);
 	_putchar(ch);
 	return (1);
 }
