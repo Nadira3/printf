@@ -3,13 +3,13 @@
  * binary_div - converts a number to base 2 by recursive split
  * @n: number
  */
-void binary_div(unsigned int n)
+void binary_div(int n)
 {
 	if (n / 2)
 		binary_div(n / 2);
 	_putchar((n % 2) + '0');
 }
-void negative_binary_div(unsigned int n)
+void negative_binary_div(int n)
 {
 	if (n / 2)
 		negative_binary_div(n / 2);

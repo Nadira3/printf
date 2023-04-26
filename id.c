@@ -24,3 +24,11 @@ void print_int(va_list list)
 	}
 	split_num(n);
 }
+void u_print_int(va_list list)
+{
+	int n = va_arg(list, int);
+
+	if (n < 0)
+		n = -n;
+	split_num(n);
+}

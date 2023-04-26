@@ -21,13 +21,20 @@ int _putchar(char str);
 void (*get_format(char ch))(va_list);
 int buf_count(int len);
 void print_int(va_list);
+void u_print_int(va_list);
 void split_num(int n);
 void printchar(va_list);
 void printstring(va_list);
 int _printf(const char *, ...);
 void buf_flush(char *buf);
 void print_binary(va_list list);
-void negative_binary_div(unsigned int n);
-void binary_div(unsigned int n);
+void print_octal(va_list list);
+void print_hex(va_list list);
+void negative_binary_div(int n);
+void negative_octal_div(int n);
+void negative_hex_div(int n)
+void binary_div(int n);
+void octal_div(int n);
+void hex_div(int n);
 
 #endif
