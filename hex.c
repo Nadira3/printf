@@ -6,7 +6,7 @@
 char letter(unsigned n)
 {
 	char hex_array[] = {'a', 'b', 'c', 'd', 'e', 'f'};
-	int i = 0;
+	unsigned int i = 0;
 
 	while (i <= n)
 	{
@@ -14,6 +14,7 @@ char letter(unsigned n)
 			return (hex_array[i]);
 		i++;
 	}
+	return (hex_array[i]);
 }
 void hex_div(unsigned n)
 {
@@ -39,4 +40,5 @@ int print_hex(va_list list)
 	unsigned n = va_arg(list, unsigned int);
 		
 	hex_div(n);
+	return (1);
 }
