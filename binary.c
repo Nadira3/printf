@@ -33,6 +33,6 @@ int print_binary(va_list list)
 	if (!flag)
 		binary_div(n);
 	else
-		negative_binary_div(n);
+		binary_div(n);
 	return (1);
 }
