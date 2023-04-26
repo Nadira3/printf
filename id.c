@@ -13,7 +13,7 @@ void split_num(int n)
  * print_int - prints integer
  * @list: integer
  */
-void print_int(va_list list)
+int print_int(va_list list)
 {
 	int n = va_arg(list, int);
 
@@ -23,4 +23,5 @@ void print_int(va_list list)
 		n = -n;
 	}
 	split_num(n);
+	return (0);
 }

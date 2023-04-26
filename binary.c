@@ -23,7 +23,7 @@ void negative_binary_div(int n)
  * print_binary - prints integer
  * @list: variable list
  */
-void print_binary(va_list list)
+int print_binary(va_list list)
 {
 	int n = va_arg(list, int);
 	int flag = n >= 0 ? 0 : 1;
@@ -33,4 +33,5 @@ void print_binary(va_list list)
 		binary_div(n);
 	else
 		negative_binary_div(n);
+	return (0);
 }

@@ -3,19 +3,20 @@
  * print_char - prints a character
  * @list: va_list containing the character to print
  */
-void print_char(va_list list)
+int print_char(va_list list)
 {
 	unsigned int ch = va_arg(list, int);
 
 	if (ch)
 		_putchar(ch);
+	return (ch ? 1 : 0);
 }
 
 /**
  * print_string - prints a string
  * @list: va_list containing the string to print
  */
-void print_string(va_list list)
+int print_string(va_list list)
 {
 	char *ch = va_arg(list, char *);
 
@@ -27,13 +28,14 @@ void print_string(va_list list)
 			ch++;
 		}
 	}
+	return (ch ? 1 : 0);
 }
 /**
  * get_format - gets the format specificier of the variable argument
  * @ch: character to match with
  * Return: function pointer
  */
-void (*get_format(char ch))(va_list)
+int (*get_format(char ch))(va_list)
 {
 	int j = 0;
 
@@ -63,8 +65,8 @@ void (*get_format(char ch))(va_list)
 int _printf(const char *format, ...)
 {
 	va_list list;
-	int i = 0, len = 0;
-	void (*func_ptr)(va_list);
+	int i = 0, len = 0, check;
+	int (*func_ptr)(va_list);
 
 	if (!format)
 		return (-1);
@@ -78,15 +80,16 @@ int _printf(const char *format, ...)
 			{
 				func_ptr = get_format(format[i]);
 				if (func_ptr)
-					func_ptr(list);
+					check = func_ptr(list);
 				else if (format[i] == '%')
 					_putchar('%');
 				else
 				{
 					buf_count(-1);
-					_puts("\n");
-					return (1);
+					return (-1);
 				}
+				if (!check)
+					return (-1);
 				i++;
 			}
 			else
