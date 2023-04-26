@@ -21,7 +21,7 @@ void negative_binary_div(unsigned int n)
  */
 void print_binary(va_list list)
 {
-	unsigned int n = va_arg(list, int);
+	int n = va_arg(list, int);
 	int flag = n >= 0 ? 0 : 1;
 
 	n = n > 0 ? n : -n;
