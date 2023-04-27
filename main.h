@@ -27,6 +27,7 @@ int u_print_int(va_list);
 void split_num(long int n);
 int printchar(va_list);
 int printstring(va_list);
+int print_string_upper(va_list list);
 int _printf(const char *, ...);
 void buf_flush(char *buf);
 int print_binary(va_list list);

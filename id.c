@@ -26,3 +26,26 @@ int print_int(va_list list)
 	split_num(n);
 	return (1);
 }
+/**
+ * print_string_upper - prints a string
+ * @list: va_list containing the string to print
+ * Return: Always 0 || 1
+ */
+int print_string_upper(va_list list)
+{
+	char *ch = va_arg(list, char *);
+
+	if (ch == NULL)
+		return (0);
+	while (*ch)
+	{
+		if (*ch < 32 || *ch >= 127)
+		{
+			_printf("\\x0%X", *ch);
+		}
+		else
+			_putchar(*ch);
+		ch++;
+	}
+	return (1);
+}

@@ -13,10 +13,8 @@ int main(void)
 	int len = 0, len2 = 0;
 
 	len = _printf("%!\n");
-	_printf("%X\n", -1024);
-	_printf("%x\n", -1024);
-	printf("%x\n", 1024);
-	_printf("%x\n", 1024);
+	_printf("%x\n", 10);
+	_printf("%S\n", "Best\nSchool");
 	fflush(stdout);
 	if (len != len2)
 	{
