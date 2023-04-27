@@ -52,10 +52,13 @@ int print_string_upper(va_list list)
 
 int print_address(va_list list)
 {
-	int *addr = va_arg:(list, int *);
+	void *addr = va_arg(list, void *);
+	unsigned long int ad;
 
 	if (!addr)
 		return (0);
-	_printf("%s", (void *)addr);
+	ad = (unsigned long int)addr;
+	_puts("0x");
+	_printf("%x", addr);
 	return (1);
 }
