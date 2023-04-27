@@ -34,7 +34,6 @@ int print_int(va_list list)
 int print_string_upper(va_list list)
 {
 	char *ch = va_arg(list, char *);
-	int len = 0;
 
 	if (ch == NULL)
 		return (0);
@@ -45,7 +44,7 @@ int print_string_upper(va_list list)
 			_printf("\\x0%X", *ch);
 		}
 		else
-			len = _putchar(*ch);
+			_putchar(*ch);
 		ch++;
 	}
 	return (1);
