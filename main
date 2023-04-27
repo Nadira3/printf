@@ -14,9 +14,10 @@ int main(void)
 
 	len = _printf("%!\n");
 	_printf("%x\n", 10);
-	len = _printf("%S\n", "Best\nSchool");
+	len = _printf("%c\n", "Best\nSchool");
 	len2 = _printf("%S", "\x01\x02\x03\x04\x05\x06\x07");
 	_printf("%p, %d\n", &len, len2);
+	_printf("%p", (void *)0x7fff5100b608);
 	_printf("%S", "\n");
 	fflush(stdout);
 	if (len != len2)
