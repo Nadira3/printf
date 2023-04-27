@@ -52,8 +52,10 @@ int print_string_upper(va_list list)
 
 int print_address(va_list list)
 {
-	void *addr = va_arg(list, void *);
+	int *addr = va_arg(list, int *);
 
-	_printf("0x%x", addr);
+	if (!addr)
+		return (0);
+	_printf("%s", (void *)addr);
 	return (1);
 }
