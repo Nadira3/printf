@@ -32,6 +32,7 @@ int _printf(const char *, ...);
 void buf_flush(char *buf);
 int print_binary(va_list list);
 int print_octal(va_list list);
+int print_address(va_list list);
 void negative_binary_div(unsigned n);
 void negative_octal_div(unsigned n);
 void negative_hex_div(unsigned n, int flag);
