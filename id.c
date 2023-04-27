@@ -41,7 +41,8 @@ int print_string_upper(va_list list)
 	{
 		if (*ch < 32 || *ch >= 127)
 		{
-			_printf("\\x%X", *ch);
+			_puts("\\x");
+			hex_div(*ch, 0);
 		}
 		else
 			_putchar(*ch);
