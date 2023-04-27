@@ -16,7 +16,7 @@ char letter(unsigned n, int flag)
 	}
 	return (hex_array[i]);
 }
-void hex_div(unsigned n, int flag)
+void hex_div(unsigned long n, int flag)
 {
 	if (n / 16)
 		hex_div((n / 16), flag);
