@@ -56,7 +56,10 @@ int print_address(va_list list)
 	unsigned long ad;
 
 	if (!addr)
-		return (0);
+	{
+		_puts("(nil)");
+		return (1);
+	}
 	ad = (unsigned long int)addr;
 	_puts("0x");
 	hex_div(ad, 0);
