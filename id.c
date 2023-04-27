@@ -42,6 +42,8 @@ int print_string_upper(va_list list)
 		if (*ch < 32 || *ch >= 127)
 		{
 			_puts("\\x0");
+			if (*ch < 16)
+				_putchar(0 + '0');
 			hex_div(*ch, 1);
 		}
 		else
