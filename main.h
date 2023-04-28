@@ -43,5 +43,7 @@ void hex_div(unsigned long int n, int flag);
 int print_hex_upper(va_list list);
 int print_hex_lower(va_list list);
 char letter(unsigned int n, int flag);
+void _print_rev_recursion(char *s);
+int print_rev(va_list list);
 
 #endif

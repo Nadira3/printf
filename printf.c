@@ -59,6 +59,7 @@ int (*get_format(char ch))(va_list)
 		{"X", print_hex_upper},
 		{"p", print_address},
 		{"%", print_percent},
+		{"r", print_rev},
 		{NULL, NULL}
 	};
 

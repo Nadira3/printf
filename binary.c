@@ -31,3 +31,30 @@ int print_binary(va_list list)
 	binary_div(n);
 	return (1);
 }
+/**
+ * _print_rev_recursion - prints a string, followed by a new line.
+ * @s: string
+ */
+void _print_rev_recursion(char *s)
+{
+	if (*s != '\0')
+	{
+		_print_rev_recursion(s + 1);
+		_putchar(*s);
+		s--;
+	}
+}
+/**
+ * print_rev - prints a string in reverse
+ * @list: variable list
+ * Return: 1
+ */
+int print_rev(va_list list)
+{
+	char *str = va_arg(list, char *);
+
+	if (!str)
+		return (0);
+	_print_rev_recursion(str);
+	return (1);
+}
