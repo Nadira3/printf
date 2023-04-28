@@ -99,8 +99,7 @@ int _printf(const char *format, ...)
 				continue;
 			}
 			func_ptr = get_format(format[i]);
-			if (!(func_ptr(list)))
-				return (-1);
+			func_ptr(list)
 			i++;
 			continue;
 		}
