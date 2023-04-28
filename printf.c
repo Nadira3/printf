@@ -9,7 +9,7 @@ int print_char(va_list list)
 	unsigned int ch = va_arg(list, int);
 
 	if (!ch)
-		buf_count(-1);
+		buf_count(1);
 	_putchar(ch);
 	return (1);
 }
