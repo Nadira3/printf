@@ -19,6 +19,7 @@ typedef struct format
 } specifier;
 
 int _putchar(char str);
+int print_percent(va_list list);
 int (*get_format(char ch))(va_list);
 int buf_count(int len);
 void _puts(char *s);
