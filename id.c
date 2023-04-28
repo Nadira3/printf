@@ -44,20 +44,20 @@ int print_int(va_list list)
  */
 int print_string_upper(va_list list)
 {
-	char *ch = va_arg(list, char *);
+	char *str = va_arg(list, char *);
 
-	if (ch == NULL)
+	if (str == NULL)
 		return (0);
-	while (*ch)
+	while (*str)
 	{
-		if ((*ch < 32 && *ch > 0)|| *ch >= 127)
+		if ((*str < 32 && *str > 0)|| *str >= 127)
 		{
 			_puts("\\x0");
-			hex_div(*ch, 1);
+			hex_div(*str, 1);
 		}
 		else
 			return (0);
-		ch++;
+		str++;
 	}
 	return (1);
 }
