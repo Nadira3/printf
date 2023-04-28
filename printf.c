@@ -82,7 +82,7 @@ int _printf(const char *format, ...)
 		return (-1);
 
 	va_start(list, format);
-	while (format && format[i])
+	while (format[i])
 	{
 		if (format[i] == '%')
 		{
