@@ -10,7 +10,7 @@ void binary_div(unsigned n)
 	_putchar((n % 2) + '0');
 }
 /**
- * negative_binary_div - comverts negative decimal to binary
+ * negative_binary_div - converts negative decimal to binary
  * @n: number
  */
 void negative_binary_div(unsigned n)
