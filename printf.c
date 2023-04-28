@@ -92,15 +92,15 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			i++;
-			if (!format[i])
-				return (-1);
-			if (!(get_format(format[i])))
+			if (!(get_format(format[i + 1])))
 			{
 				_putchar(format[i]);
 				i++;
 				continue;
 			}
+			i++;
+			if (!format[i])
+				return (-1);
 			func_ptr = get_format(format[i]);
 			len += func_ptr(list);
 			i++;
