@@ -10,6 +10,8 @@ int print_char(va_list list)
 
 	if (ch)
 		_putchar(ch);
+	else
+		buf_count(1);
 	return (1);
 }
 int print_percent(va_list list)
@@ -30,7 +32,7 @@ int print_string(va_list list)
 	int i = 0;
 
 	if (ch == NULL)
-		return (0);
+		ch = "(null)";
 	while (*ch)
 	{
 		_putchar(*ch);
@@ -83,7 +85,7 @@ int _printf(const char *format, ...)
 	va_list list;
 	int i = 0, len = 0, (*func_ptr)(va_list);
 
-	if (!format || (format[0] == '%' && !(get_format(format[1]))))
+	if (!format)
 		return (-1);
 	va_start(list, format);
 	while (format[i])
@@ -91,8 +93,14 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			if (!format[i] || !(get_format(format[i])))
+			if (!format[i])
 				return (-1);
+			if (!(get_format(format[i])))
+			{
+				_putchar(format[i]);
+				i++;
+				continue;
+			}
 			func_ptr = get_format(format[i]);
 			len += func_ptr(list);
 			i++;
