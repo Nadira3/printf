@@ -45,5 +45,7 @@ int print_hex_lower(va_list list);
 char letter(unsigned int n, int flag);
 void _print_rev_recursion(char *s);
 int print_rev(va_list list);
+void find_rot(char *s);
+int print_rot13(va_list list);
 
 #endif

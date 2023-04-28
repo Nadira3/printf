@@ -60,6 +60,7 @@ int (*get_format(char ch))(va_list)
 		{"p", print_address},
 		{"%", print_percent},
 		{"r", print_rev},
+		{"R", print_rot13},
 		{NULL, NULL}
 	};
 
