@@ -77,10 +77,6 @@ int _printf(const char *format, ...)
 
 	if (!format)
 		return (-1);
-	
-	if (format[0] == '%' && !(get_format(format[1])))
-		return (-1);
-
 	va_start(list, format);
 	while (format[i])
 	{
@@ -93,24 +89,19 @@ int _printf(const char *format, ...)
 				if (func_ptr)
 				{	
 					if (!(func_ptr(list)))
-					{
-						va_end(list);
 						return (-1);
-					}
 				}
 				else if (format[i] == '%')
 					_putchar('%');
 				else
 				{
 					buf_count(-1);
-					va_end(list);
 					return (-1);
 				}
 				i++;
 			}
-			else{
+			else
 				return (-1);
-			}
 			continue;
 		}
 		_putchar(format[i]);
