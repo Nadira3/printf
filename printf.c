@@ -77,8 +77,12 @@ int _printf(const char *format, ...)
 
 	if (!format)
 		return (-1);
+	
+	if (format[0] == '%' && !(get_format(format[1])))
+		return (-1);
+
 	va_start(list, format);
-	while (format && format[i])
+	while (format[i])
 	{
 		if (format[i] == '%')
 		{
