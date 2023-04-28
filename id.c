@@ -56,7 +56,7 @@ int print_string_upper(va_list list)
 			hex_div(*str, 1);
 		}
 		else
-			return (0);
+			_putchar(*str);
 		str++;
 	}
 	return (1);
