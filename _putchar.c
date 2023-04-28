@@ -9,9 +9,11 @@ int _putchar(char str) /* should include a param for the length of the string */
 	static int len;
 	static char buf[BUFSIZE];
 
-	if (len >= BUFSIZE - 1 || !str)
+	if (len >= BUFSIZE || !str)
 	{
 		write(1, buf, len);
+		if (len >= BUFSIZE)
+			buf_count(1);
 		len = 0;
 		return (0);
 	}

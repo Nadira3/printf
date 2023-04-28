@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <stdio.h>
-#define BUFSIZE 2048
+#define BUFSIZE 102
 
 /**
  * struct format - a template for the format specifiers and corresponding

@@ -8,9 +8,14 @@ int print_char(va_list list)
 {
 	unsigned int ch = va_arg(list, int);
 
-	if (!ch)
-		buf_count(1);
-	_putchar(ch);
+	if (ch)
+		_putchar(ch);
+	return (1);
+}
+int print_percent(va_list list)
+{
+	(void)list;
+	_putchar('%');
 	return (1);
 }
 
@@ -22,6 +27,7 @@ int print_char(va_list list)
 int print_string(va_list list)
 {
 	char *ch = va_arg(list, char *);
+	int i = 0;
 
 	if (ch == NULL)
 		return (0);
@@ -29,8 +35,9 @@ int print_string(va_list list)
 	{
 		_putchar(*ch);
 		ch++;
+		i++;
 	}
-	return (1);
+	return (i);
 }
 /**
  * get_format - gets the format specifier of the variable argument
@@ -53,6 +60,7 @@ int (*get_format(char ch))(va_list)
 		{"x", print_hex_lower},
 		{"X", print_hex_upper},
 		{"p", print_address},
+		{"%", print_percent},
 		{NULL, NULL}
 	};
 
@@ -75,7 +83,7 @@ int _printf(const char *format, ...)
 	va_list list;
 	int i = 0, len = 0, (*func_ptr)(va_list);
 
-	if (!format)
+	if (!format || (format[0] == '%' && !(get_format(format[1]))))
 		return (-1);
 	va_start(list, format);
 	while (format[i])
@@ -83,33 +91,19 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			if (format[i])
-			{
-				func_ptr = get_format(format[i]);
-				if (func_ptr)
-				{	
-					if (!(func_ptr(list)))
-						return (-1);
-				}
-				else if (format[i] == '%')
-					_putchar('%');
-				else
-				{
-					buf_count(-1);
-					return (-1);
-				}
-				i++;
-			}
-			else
+			if (!format[i] || !(get_format(format[i])))
 				return (-1);
+			func_ptr = get_format(format[i]);
+			len += func_ptr(list);
+			i++;
 			continue;
 		}
-		_putchar(format[i]);
+		len += _putchar(format[i]);
 		i++;
 	}
 	_putchar(format[i]);
-	len += buf_count(0);
 	va_end(list);
+	len = buf_count(0);
 	buf_count(-1);
 	return (len);
 }
