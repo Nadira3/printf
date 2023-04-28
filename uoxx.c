@@ -1,7 +1,7 @@
 
 #include "main.h"
 /**
- * split_num - splits a number
+ * u_split_num - splits a number
  * @n: number
  */
 void u_split_num(long int n)
@@ -31,7 +31,7 @@ int u_print_int(va_list list)
  * octal_div - converts a number to base 8 by recursive split
  * @n: number
  */
-void octal_div(unsigned n)
+void octal_div(unsigned int n)
 {
 	if (n / 8)
 		octal_div(n / 8);
@@ -41,20 +41,20 @@ void octal_div(unsigned n)
  * negative_octal_div - converts negative decimal to octal
  * @n: number
  */
-void negative_octal_div(unsigned n)
+void negative_octal_div(unsigned int n)
 {
 	if (n / 8)
 		negative_octal_div(n / 8);
 	_putchar((7 - (n % 8)) + '0');
 }
 /**
- * print_binary - prints integer
+ * print_octal - prints integer
  * @list: variable list
  * Return: Always 0 || 1
  */
 int print_octal(va_list list)
 {
-	unsigned n = va_arg(list, unsigned int);
+	unsigned int n = va_arg(list, unsigned int);
 
 	octal_div(n);
 	return (1);

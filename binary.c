@@ -3,7 +3,7 @@
  * binary_div - converts a number to base 2 by recursive split
  * @n: number
  */
-void binary_div(unsigned n)
+void binary_div(unsigned int n)
 {
 	if (n / 2)
 		binary_div(n / 2);
@@ -13,7 +13,7 @@ void binary_div(unsigned n)
  * negative_binary_div - converts negative decimal to binary
  * @n: number
  */
-void negative_binary_div(unsigned n)
+void negative_binary_div(unsigned int n)
 {
 	if (n / 2)
 		negative_binary_div(n / 2);
@@ -26,7 +26,7 @@ void negative_binary_div(unsigned n)
  */
 int print_binary(va_list list)
 {
-	unsigned n = va_arg(list, unsigned int);
+	unsigned int n = va_arg(list, unsigned int);
 
 	binary_div(n);
 	return (1);

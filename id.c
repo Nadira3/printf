@@ -61,7 +61,11 @@ int print_string_upper(va_list list)
 	}
 	return (1);
 }
-
+/**
+ * print_address - prints the address of a variable
+ * @list: va_list containing argument to print
+ * Return: Always 1
+ */
 int print_address(va_list list)
 {
 	void *addr = va_arg(list, void *);

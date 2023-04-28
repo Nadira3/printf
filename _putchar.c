@@ -2,9 +2,9 @@
 /**
  * _putchar - puts a character to output buffer
  * @str: character
- * Return: 0
+ * Return: 0 || 1
  */
-int _putchar(char str) /* should include a param for the length of the string */
+int _putchar(char str)
 {
 	static int len;
 	static char buf[BUFSIZE];
