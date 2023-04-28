@@ -4,7 +4,7 @@
  * @str: character
  * Return: 0
  */
-int _putchar(char str)
+int _putchar(char str) /* should include a param for the length of the string */
 {
 	static int len;
 	static char buf[BUFSIZE];
