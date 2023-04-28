@@ -33,7 +33,7 @@ int print_string(va_list list)
 	return (1);
 }
 /**
- * get_format - gets the format specificier of the variable argument
+ * get_format - gets the format specifier of the variable argument
  * @ch: character to match with
  * Return: function pointer
  */
@@ -62,12 +62,13 @@ int (*get_format(char ch))(va_list)
 			return (csp[j].func);
 		j++;
 	}
-	return (csp[j].func);
+	return (NULL); /*Here should just return NULL*/
+	
 }
 /**
  * _printf - prints strings and characters
  * @format: format string
- * Return: lenght of the string
+ * Return: length of the string
  */
 int _printf(const char *format, ...)
 {
@@ -86,21 +87,26 @@ int _printf(const char *format, ...)
 			{
 				func_ptr = get_format(format[i]);
 				if (func_ptr)
-				{
+				{	
 					if (!(func_ptr(list)))
+					{
+						va_end(list);
 						return (-1);
+					}
 				}
 				else if (format[i] == '%')
 					_putchar('%');
 				else
 				{
 					buf_count(-1);
+					va_end(list);
 					return (-1);
 				}
 				i++;
 			}
-			else
+			else{
 				return (-1);
+			}
 			continue;
 		}
 		_putchar(format[i]);
@@ -108,6 +114,7 @@ int _printf(const char *format, ...)
 	}
 	_putchar(format[i]);
 	len += buf_count(0);
+	va_end(list);
 	buf_count(-1);
 	return (len);
 }

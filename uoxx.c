@@ -38,7 +38,7 @@ void octal_div(unsigned n)
 	_putchar((n % 8) + '0');
 }
 /**
- * negative_octal_div - comverts negative decimal to octal
+ * negative_octal_div - converts negative decimal to octal
  * @n: number
  */
 void negative_octal_div(unsigned n)
