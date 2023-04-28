@@ -50,7 +50,7 @@ int print_string_upper(va_list list)
 		return (0);
 	while (*ch)
 	{
-		if (*ch < 32 || *ch >= 127)
+		if ((*ch < 32 && *ch > 0)|| *ch >= 127)
 		{
 			_puts("\\x0");
 			hex_div(*ch, 1);
