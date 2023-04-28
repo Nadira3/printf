@@ -8,16 +8,12 @@ int print_char(va_list list)
 {
 	unsigned int ch = va_arg(list, int);
 
-	if (ch)
-		_putchar(ch);
-	else
+	if (!ch)
+	{
+		write(1, &ch, 1);
 		buf_count(1);
-	return (1);
-}
-int print_percent(va_list list)
-{
-	(void)list;
-	_putchar('%');
+	}
+	_putchar(ch);
 	return (1);
 }
 
@@ -73,7 +69,7 @@ int (*get_format(char ch))(va_list)
 		j++;
 	}
 	return (NULL); /*Here should just return NULL*/
-	
+
 }
 /**
  * _printf - prints strings and characters

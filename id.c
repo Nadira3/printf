@@ -1,5 +1,16 @@
 #include "main.h"
 /**
+ * print_percent - prints percent
+ * @list: integer
+ * Return: 0
+ */
+int print_percent(va_list list)
+{
+	(void)list;
+	_putchar('%');
+	return (1);
+}
+/**
  * split_num - splits a number
  * @n: number
  */
