@@ -48,10 +48,12 @@ void negative_hex_div(unsigned int n, int flag)
  * @list: variable list
  * Return: Always 1
  */
-int print_hex_lower(va_list list)
+int print_hex_lower(va_list list, char flag)
 {
 	unsigned int n = va_arg(list, unsigned int);
 
+	if (flag == '#')
+		_puts("0x");
 	hex_div(n, 0);
 	return (1);
 }
@@ -60,10 +62,12 @@ int print_hex_lower(va_list list)
  * @list: variable list
  * Return: Always 1
  */
-int print_hex_upper(va_list list)
+int print_hex_upper(va_list list, char flag)
 {
 	unsigned int n = va_arg(list, unsigned int);
 
+	if (flag == '#')
+		_puts("0X");
 	hex_div(n, 1);
 	return (1);
 }

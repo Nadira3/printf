@@ -1,12 +1,29 @@
 #include "main.h"
 /**
+ * flag - checks the flag of a printf call
+ * @ch: character to be evaluated for flag validity
+ * Return: flag if successfully matched
+ */
+char flag_check(char ch)
+{
+	char *str = " +0";
+
+	while (*str++)
+	{
+		if (ch == *str)
+			return (ch);
+	}
+	return (ch);
+}
+/**
  * print_char - prints a character
  * @list: va_list containing the character to print
  * Return: Always 0 || 1
  */
-int print_char(va_list list)
+int print_char(va_list list, char __attribute__((unused)) flag)
 {
 	unsigned int ch = va_arg(list, int);
+	(void)flag;
 
 	if (!ch)
 	{
@@ -22,7 +39,7 @@ int print_char(va_list list)
  * @list: va_list containing the string to print
  * Return: Always 0 || 1
  */
-int print_string(va_list list)
+int print_string(va_list list, char __attribute__((unused)) flag)
 {
 	char *ch = va_arg(list, char *);
 	int i = 0;
@@ -42,7 +59,7 @@ int print_string(va_list list)
  * @ch: character to match with
  * Return: function pointer
  */
-int (*get_format(char ch))(va_list)
+int (*get_format(char ch))(va_list, char flag)
 {
 	int j = 0;
 
@@ -81,7 +98,8 @@ int (*get_format(char ch))(va_list)
 int _printf(const char *format, ...)
 {
 	va_list list;
-	int i = 0, len = 0, (*func_ptr)(va_list);
+	int i = 0, len = 0, (*func_ptr)(va_list, char);
+	char flag;
 
 	if (!format)
 		return (-1);
@@ -93,6 +111,11 @@ int _printf(const char *format, ...)
 			i++;
 			if (!format[i])
 				return (-1);
+			if (flag_check(format[i]))
+			{
+				flag = flag_check(format[i]);
+				i++;
+			}
 			if (!(get_format(format[i])))
 			{
 				i--;
@@ -101,7 +124,7 @@ int _printf(const char *format, ...)
 				continue;
 			}
 			func_ptr = get_format(format[i]);
-			func_ptr(list);
+			func_ptr(list, flag);
 			i++;
 			continue;
 		}

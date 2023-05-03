@@ -1,4 +1,3 @@
-
 #include "main.h"
 /**
  * u_split_num - splits a number
@@ -15,7 +14,7 @@ void u_split_num(long int n)
  * @list: integer
  * Return: 0
  */
-int u_print_int(va_list list)
+int u_print_int(va_list list, char flag)
 {
 	long int n = va_arg(list, unsigned int);
 
@@ -24,6 +23,8 @@ int u_print_int(va_list list)
 		_putchar('-');
 		n = -n;
 	}
+	if (flag == ' ')
+		_putchar(flag);
 	split_num(n);
 	return (1);
 }
@@ -52,10 +53,12 @@ void negative_octal_div(unsigned int n)
  * @list: variable list
  * Return: Always 0 || 1
  */
-int print_octal(va_list list)
+int print_octal(va_list list, char flag)
 {
 	unsigned int n = va_arg(list, unsigned int);
 
+	if (flag == '#')
+		_putchar('0');
 	octal_div(n);
 	return (1);
 }

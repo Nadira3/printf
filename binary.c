@@ -24,9 +24,10 @@ void negative_binary_div(unsigned int n)
  * @list: variable list
  * Return: Always 0 || 1
  */
-int print_binary(va_list list)
+int print_binary(va_list list, char flag)
 {
 	unsigned int n = va_arg(list, unsigned int);
+	(void)flag;
 
 	binary_div(n);
 	return (1);
@@ -49,9 +50,10 @@ void _print_rev_recursion(char *s)
  * @list: variable list
  * Return: 1
  */
-int print_rev(va_list list)
+int print_rev(va_list list, char flag)
 {
 	char *str = va_arg(list, char *);
+	(void)flag;
 
 	if (!str)
 		return (0);

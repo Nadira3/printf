@@ -21,9 +21,10 @@ void find_rot(char *s)
  * @list: variable list
  * Return: integer
  */
-int print_rot13(va_list list)
+int print_rot13(va_list list, char flag)
 {
 	char *str = va_arg(list, char *);
+	(void)flag;
 
 	if (!str)
 		return (0);
