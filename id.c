@@ -28,7 +28,7 @@ void split_num(long int n)
  */
 int print_int(va_list list, char flag)
 {
-	long int n = va_arg(list, int);
+	long int n = va_arg(list, long int);
 
 	if (flag)
 	{

@@ -6,7 +6,7 @@
  */
 char flag_check(char ch)
 {
-	char *str = " +0";
+	char *str = "+# ";
 
 	while (*str++)
 	{
