@@ -13,7 +13,7 @@ char flag_check(char ch)
 		if (ch == *str)
 			return (ch);
 	}
-	return (ch);
+	return ('\0');
 }
 /**
  * print_char - prints a character

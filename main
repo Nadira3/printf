@@ -1,0 +1,9 @@
+#include "main.h"
+#include <limits.h>
+int main(void)
+{
+	_printf("% d\n", INT_MIN);
+	_printf("%#X\n", 0);
+	_printf("%#o", 0);
+	return (0);
+}
