@@ -6,12 +6,13 @@
  */
 char flag_check(char ch)
 {
-	char *str = "+# ";
+	char *str = "+ #";
 
-	while (*str++)
+	while (*str)
 	{
 		if (ch == *str)
 			return (ch);
+		str++;
 	}
 	return ('\0');
 }
