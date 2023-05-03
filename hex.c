@@ -53,7 +53,7 @@ int print_hex_lower(va_list list, char flag)
 	unsigned int n = va_arg(list, unsigned int);
 
 	if (flag == '#')
-		_puts("0x");
+		_puts(n == 0 ? "0" : "0x");
 	hex_div(n, 0);
 	return (1);
 }
@@ -66,7 +66,7 @@ int print_hex_upper(va_list list, char flag)
 {
 	unsigned int n = va_arg(list, unsigned int);
 
-	if (flag == '#')
+	if (flag == '#' && n > 0)
 		_puts("0X");
 	hex_div(n, 1);
 	return (1);

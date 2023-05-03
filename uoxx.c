@@ -57,7 +57,7 @@ int print_octal(va_list list, char flag)
 {
 	unsigned int n = va_arg(list, unsigned int);
 
-	if (flag == '#')
+	if (flag == '#' && n > 0)
 		_putchar('0');
 	octal_div(n);
 	return (1);
